@@ -26,10 +26,10 @@ ul {
   padding: 0;
 }
 
-h4 {
-  margin: 0;
-}
-
+h1,
+h2,
+h3,
+h4,
 p {
   margin: 0;
 }
@@ -40,9 +40,14 @@ p {
 }
 
 /* header start */
+
+.header {
+  border-bottom: 1px solid #ececec;
+}
+
 .header-section {
   display: flex;
-  border-bottom: 1px solid #ececec;
+
   justify-content: space-between;
   align-items: center;
 }
@@ -88,7 +93,7 @@ p {
   list-style: none;
 }
 
-.contact-list li {
+.contact-list li:not(:last-child) {
   padding-right: 50px;
 }
 
@@ -116,20 +121,28 @@ p {
 }
 
 .footer-logo {
+  display: block;
   text-decoration: none;
   color: #fff;
   font-family: "Raleway", sans-serif;
   font-size: 26px;
   line-height: 1.2;
+  letter-spacing: 0.03em;
+  padding-top: 60px;
 }
 
 .footer address {
   font-style: normal;
+  letter-spacing: 0.03em;
+  padding-top: 20px;
+  padding-bottom: 60px;
 }
 
 .footer-link {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.6);
+  display: block;
+  padding-top: 9px;
 }
 
 .footer-link:hover,
@@ -142,6 +155,7 @@ p {
 /* index main start */
 .page-title {
   background-color: var(--bg-color);
+  height: 600px;
 }
 
 .title {
@@ -151,10 +165,15 @@ p {
   font-size: 44px;
   line-height: 1.36;
   text-transform: uppercase;
-  letter-spacing: 0.06rem;
+  letter-spacing: 0.06em;
+  max-width: 700px;
+  margin: auto;
+  padding-top: 200px;
+  padding-bottom: 30px;
 }
 
 .main-button {
+  display: block;
   background-color: var(--active-color);
   color: #fff;
   font: inherit;
@@ -162,8 +181,9 @@ p {
   width: 200px;
   font-weight: 700;
   cursor: pointer;
-  margin: 0 auto;
+  margin: auto;
   border-radius: 4px;
+  border: 0;
 }
 
 .advantages-section h3 {
@@ -188,6 +208,7 @@ p {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
+  padding-bottom: 50px;
 }
 
 .service-section ul {
@@ -209,6 +230,7 @@ p {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
+  padding-bottom: 50px;
 }
 
 .team-section ul {
@@ -246,19 +268,22 @@ p {
   list-style: none;
   display: flex;
   justify-content: center;
+  margin-bottom: 34px;
 }
 
 .filters button {
   background-color: var(--button-color);
+  font-size: 16px;
   font-family: inherit;
   font-weight: 500;
   line-height: 1.62;
   cursor: pointer;
-  padding: 6px 22px;
   border-radius: 4px;
+  border: 0;
+  padding: 6px 22px;
 }
 
-.filters button:not(:last-child) {
+.filters li:not(:last-child) {
   margin-right: 8px;
 }
 
@@ -270,6 +295,7 @@ p {
 
 .projects-section figure {
   margin: 0;
+  display: table;
 }
 
 .projects-section figcaption {
@@ -277,6 +303,12 @@ p {
   border-left: 1px solid #eeeeee;
   border-right: 1px solid #eeeeee;
   border-bottom: 1px solid #eeeeee;
+  display: table-caption;
+  caption-side: bottom;
+}
+
+.projects-section img {
+  display: block;
 }
 
 .projects-section ul {
