@@ -9,6 +9,12 @@
   --button-color: #f5f4fa;
   --p-color: #757575;
   --section-color: #f5f4fa;
+  --border-color: #ececec;
+  --card-bg: #fff;
+  --text-color: #fff;
+  --pic-border: #eeeeee;
+  --logo-color: #000;
+  --contact-color: rgba(255, 255, 255, 0.6);
 }
 
 body {
@@ -17,13 +23,9 @@ body {
   font-size: 16px;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-}
-
 ul {
   padding: 0;
+  list-style: none;
 }
 
 h1,
@@ -34,6 +36,12 @@ p {
   margin: 0;
 }
 
+.container {
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
 .section {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -42,35 +50,35 @@ p {
 /* header start */
 
 .header {
-  border-bottom: 1px solid #ececec;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .header-section {
   display: flex;
-
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .header-logo {
   font-family: "Raleway", sans-serif;
-  color: #000;
+  color: var(--logo-color);
   text-decoration: none;
   font-weight: 700;
   font-size: 26px;
   line-height: 1.2;
   letter-spacing: 0.03em;
+  flex-grow: 1;
 }
 .logo-blue {
   color: #2196f3;
 }
 
 .nav-list {
-  list-style: none;
   display: flex;
+  flex-grow: 1;
 }
 
-.nav-list li:not(last-child) {
+.nav-list li:not(:last-child) {
   padding-right: 46px;
 }
 
@@ -89,8 +97,12 @@ p {
 }
 
 .contact-list {
-  display: flex;
-  list-style: none;
+  text-align: right;
+  flex-grow: 4;
+}
+
+.contact-list li {
+  display: inline;
 }
 
 .contact-list li:not(:last-child) {
@@ -104,6 +116,7 @@ p {
   font-size: 14px;
   line-height: 1.17;
   letter-spacing: 0.02em;
+  align-self: flex-end;
 }
 
 .header-contact:hover,
@@ -115,7 +128,7 @@ p {
 /* footer start */
 .footer {
   background-color: var(--bg-color);
-  color: #fff;
+  color: var(--text-color);
   font-size: 14px;
   line-height: 1.71;
 }
@@ -123,7 +136,7 @@ p {
 .footer-logo {
   display: block;
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
   font-family: "Raleway", sans-serif;
   font-size: 26px;
   line-height: 1.2;
@@ -140,7 +153,7 @@ p {
 
 .footer-link {
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--contact-color);
   display: block;
   padding-top: 9px;
 }
@@ -159,7 +172,7 @@ p {
 }
 
 .title {
-  color: #fff;
+  color: var(--text-color);
   text-align: center;
   font-weight: 900;
   font-size: 44px;
@@ -167,21 +180,20 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.06em;
   max-width: 700px;
-  margin: auto;
+  margin: 0 auto 30px;
   padding-top: 200px;
-  padding-bottom: 30px;
 }
 
 .main-button {
   display: block;
   background-color: var(--active-color);
-  color: #fff;
+  color: var(--text-color);
   font: inherit;
   height: 50px;
   width: 200px;
   font-weight: 700;
   cursor: pointer;
-  margin: auto;
+  margin: 0 auto;
   border-radius: 4px;
   border: 0;
 }
@@ -190,6 +202,7 @@ p {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
+  margin-bottom: 10px;
 }
 
 .advantages-section p {
@@ -199,8 +212,12 @@ p {
 }
 
 .advantages-section ul {
-  list-style: none;
   display: flex;
+  gap: 30px;
+}
+
+.advantages-section li {
+  flex-basis: calc((100% - 60px) / 3);
 }
 
 .service-section h2 {
@@ -208,17 +225,17 @@ p {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .service-section ul {
-  list-style: none;
   display: flex;
   margin: 0;
+  gap: 30px;
 }
 
-.service-section li:not(:last-child) {
-  padding-right: 30px;
+.service-section li {
+  flex-basis: calc((100%-90px) / 4);
 }
 
 .team-section {
@@ -230,18 +247,21 @@ p {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.16;
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .team-section ul {
-  list-style: none;
   display: flex;
-  justify-content: space-between;
+  gap: 30px;
+}
+
+.team-section li {
+  flex-basis: calc((100%-60px) / 3);
 }
 
 .team-section figure {
   margin: 0;
-  background-color: #fff;
+  background-color: var(--card-bg);
   text-align: center;
 }
 
@@ -265,10 +285,9 @@ p {
 /* portfolio start */
 
 .filters {
-  list-style: none;
   display: flex;
   justify-content: center;
-  margin-bottom: 34px;
+  margin-bottom: 50px;
 }
 
 .filters button {
@@ -290,21 +309,18 @@ p {
 .filters button:hover,
 .filters button:focus {
   background-color: var(--active-color);
-  color: #fff;
+  color: var(--text-color);
 }
 
 .projects-section figure {
   margin: 0;
-  display: table;
 }
 
 .projects-section figcaption {
   padding: 20px 24px;
-  border-left: 1px solid #eeeeee;
-  border-right: 1px solid #eeeeee;
-  border-bottom: 1px solid #eeeeee;
-  display: table-caption;
-  caption-side: bottom;
+  border-left: 1px solid var(--pic-border);
+  border-right: 1px solid var(--pic-border);
+  border-bottom: 1px solid var(--pic-border);
 }
 
 .projects-section img {
@@ -312,7 +328,6 @@ p {
 }
 
 .projects-section ul {
-  list-style: none;
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
