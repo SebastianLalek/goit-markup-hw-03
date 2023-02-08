@@ -25,6 +25,7 @@ body {
 
 ul {
   padding: 0;
+  margin: 0;
   list-style: none;
 }
 
@@ -57,6 +58,7 @@ p {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 24px 0 25px;
 }
 
 .header-logo {
@@ -217,7 +219,7 @@ p {
 }
 
 .advantages-section li {
-  flex-basis: calc((100% - 60px) / 3);
+  flex-basis: calc((100% - 90px) / 4);
 }
 
 .service-section h2 {
@@ -234,12 +236,22 @@ p {
   gap: 30px;
 }
 
+.service-section img {
+  display: block;
+  max-width: 370px;
+}
+
 .service-section li {
-  flex-basis: calc((100%-90px) / 4);
+  flex-basis: calc((100%-60px) / 3);
 }
 
 .team-section {
   background-color: var(--section-color);
+}
+
+.team-section img {
+  display: block;
+  max-width: 270px;
 }
 
 .team-section h2 {
@@ -256,7 +268,7 @@ p {
 }
 
 .team-section li {
-  flex-basis: calc((100%-60px) / 3);
+  flex-basis: 260px;
 }
 
 .team-section figure {
@@ -325,6 +337,7 @@ p {
 
 .projects-section img {
   display: block;
+  max-width: 370px;
 }
 
 .projects-section ul {
